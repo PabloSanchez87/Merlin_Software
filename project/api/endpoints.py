@@ -26,8 +26,14 @@ async def read_root():
 async def sort_products(request: SortProductsRequest):
     try:
         # Convertir las listas de ventas y stock en diccionarios para un acceso más fácil
-        sales_dict = {item.productId: item.sales for item in request.productSales}
-        stock_dict = {item.productId: item.stock for item in request.productStock}
+        # Crear diccionarios de ventas y stock
+        # sales_dict = {item.productId: item.sales for item in request.productSales}
+        # stock_dict = {item.productId: item.stock for item in request.productStock}
+        sales_dict, stock_dict = {}, {}
+        for item in request.productSales:
+            sales_dict[item.productId] = item.sales
+        for item in request.productStock:
+            stock_dict[item.productId] = item.stock
 
         # Crear una lista de productos con sus puntuaciones calculadas
         products = []
@@ -43,12 +49,18 @@ async def sort_products(request: SortProductsRequest):
                 products.append({"productId": product_id, "score": score})
 
         # Ordenar los productos por puntuación en orden descendente
-        sorted_products = sorted(products, key=lambda x: x["score"], reverse=True)
+        sorted_products = sorted(products, key=lambda product: product["score"], reverse=True)
 
         # Devolver solo los identificadores de los productos en el orden calculado
-        sorted_product_ids = [product["productId"] for product in sorted_products]
+        #sorted_product_ids = [product["productId"] for product in sorted_products]
+        sorted_product_ids = []
+        for product in sorted_products:
+            sorted_product_ids.append(product["productId"])
 
         return sorted_product_ids
 
     except Exception as e:
-        raise HTTPException(status_code=500, detail="Error interno del servidor")
+        # Puedes agregar registro del error aquí para monitorear los problemas
+        print(f"Error inesperado: {e}")
+        # Devolver un mensaje de error genérico
+        raise HTTPException(status_code=500, detail="Ha ocurrido un error inesperado. Inténtelo de nuevo más tarde.")
