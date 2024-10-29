@@ -41,6 +41,9 @@ Merlin_Software/
    code . # Opcional, solo si usas VSCode
    ```
 
+> [!NOTE]
+> Puedes crear el entorno manualmente o puedes usar los scripts de automatización.
+
 2. Crea un entorno virtual e instala las dependencias:
    ```sh
    python3 -m venv venv
