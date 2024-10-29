@@ -36,8 +36,9 @@ Merlin_Software/
 ### Instalación
 1. Clona este repositorio:
    ```sh
-   git clone <url-del-repositorio>
-   cd Merlin_Software/project
+   git clone https://github.com/PabloSanchez87/Merlin_Software
+   cd Merlin_Software
+   code . # Opcional, solo si usas VSCode
    ```
 
 2. Crea un entorno virtual e instala las dependencias:
