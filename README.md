@@ -43,7 +43,7 @@ Merlin_Software/
 
 2. Crea un entorno virtual e instala las dependencias:
    ```sh
-   python -m venv venv
+   python3 -m venv venv
    source venv/bin/activate  # Linux/Mac/WSL
    pip install -r requirements.txt
    ```
