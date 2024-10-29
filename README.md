@@ -59,6 +59,13 @@ Merlin_Software/
 
 ### `Scripts de Automatización (OPCIONAL)`
 
+> ![IMPORTANT] 
+> Permisos de Ejecución
+> Antes de ejecutar estos scripts, asegúrate de darles permisos de ejecución:
+> ```sh
+> chmod +x automation_scripts/*.sh
+> ```
+
 En la carpeta `automation_scripts/` se encuentran varios scripts que ayudan a simplificar la configuración y ejecución del proyecto:
 
 - **`run.sh`**: Crea un entorno virtual, instala las dependencias y ejecuta la aplicación. Puedes ejecutarlo con:
@@ -75,12 +82,6 @@ En la carpeta `automation_scripts/` se encuentran varios scripts que ayudan a si
   ```sh
   ./automation_scripts/test_api.sh
   ```
-
-### Permisos de Ejecución
-Antes de ejecutar estos scripts, asegúrate de darles permisos de ejecución:
-```sh
-chmod +x automation_scripts/*.sh
-```
 
 ## Uso de la API
 
