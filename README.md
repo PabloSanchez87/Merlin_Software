@@ -8,7 +8,7 @@ Este proyecto es un servicio web que ofrece una API REST para la ordenación aut
 - **FastAPI**: Para la creación de la API REST.
 - **Pydantic**: Para la validación de esquemas de datos.
 
-He escogido **FastAPI** para este proyecto debido a su eficiencia y simplicidad al crear APIs RESTful. Ofrece validación de datos con **Pydantic**, una sintaxis fácil de usar y una estructura clara para definir rutas y endpoints. Además, ofrece una buena documentación con **Swagger**. Además, **FastAPI** es compatible con **uvicorn**, un servidor de aplicaciones asíncronas rápida y eficiente.
+He escogido **FastAPI** para este proyecto debido a su eficiencia y simplicidad al crear APIs RESTful. Ofrece validación de datos con **Pydantic**, una sintaxis fácil de usar y una estructura clara para definir rutas y endpoints. Además, ofrece una buena documentación con **Swagger**. 
 
 ## Estructura del Proyecto
 ```
@@ -51,12 +51,6 @@ Merlin_Software/
    ```sh
    fastapi dev main.py --port 8080
    ```
-   o
-
-   ```sh	
-   uvicorn main:app --reload --port 8080
-   ```
-
    La API estará disponible en `http://127.0.0.1:8080`.
 
 ## Uso de la API
@@ -110,6 +104,19 @@ curl -X POST 'http://127.0.0.1:8080/sort-products' -H 'Content-Type: application
   ]
 }'
 ```
+
+## Tests
+
+### Ejecución de Tests
+El proyecto incluye un conjunto de pruebas unitarias y de integración para verificar el funcionamiento del endpoint `/sort-products` y la función `calculate_score`. Estas pruebas están ubicadas en el directorio `tests/`.
+
+Para ejecutar las pruebas, asegúrate de que el entorno virtual esté activado y ejecuta el siguiente comando desde la raíz del proyecto (`Merlin_Software`):
+
+```sh
+pytest -v tests/
+```
+Esto ejecutará todas las pruebas definidas y proporcionará un resumen de los resultados.
+
 
 ## Consideraciones
 - **Configurabilidad**: Puedes modificar las ponderaciones (`salesWeight` y `stockWeight`) para ajustar la prioridad de ventas o stock según tus necesidades.

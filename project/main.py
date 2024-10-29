@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from api.endpoints import router as product_router
+from project.api.endpoints import router as product_router
 
 app = FastAPI(
     title="Ordenación de Productos - Merlin Software",

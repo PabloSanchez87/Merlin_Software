@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
-from schemas.product_schemas import SortProductsRequest
-from logic.calculate_score import calculate_score
+from project.schemas.product_schemas import SortProductsRequest
+from project.logic.calculate_score import calculate_score
 
 router = APIRouter()
 
@@ -63,4 +63,4 @@ async def sort_products(request: SortProductsRequest):
         # Puedes agregar registro del error aquí para monitorear los problemas
         print(f"Error inesperado: {e}")
         # Devolver un mensaje de error genérico
-        raise HTTPException(status_code=500, detail="Ha ocurrido un error inesperado. Inténtelo de nuevo más tarde.")
+        raise HTTPException(status_code=500, detail="Ha ocurrido un error inesperado. Revisar el registro de errores.")
