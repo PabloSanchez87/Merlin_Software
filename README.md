@@ -59,7 +59,7 @@ Merlin_Software/
 
 ### `Scripts de Automatización (OPCIONAL)`
 
-> ![IMPORTANT] 
+> [!IMPORTANT] 
 > Permisos de Ejecución
 > Antes de ejecutar estos scripts, asegúrate de darles permisos de ejecución:
 > ```sh
