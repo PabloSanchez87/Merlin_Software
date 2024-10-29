@@ -8,7 +8,7 @@ Este proyecto es un servicio web que ofrece una API REST para la ordenación aut
 - **FastAPI**: Para la creación de la API REST.
 - **Pydantic**: Para la validación de esquemas de datos.
 
-He escogido **FastAPI** para este proyecto debido a su eficiencia y simplicidad al crear APIs RESTful. Ofrece validación de datos con **Pydantic**, una sintaxis fácil de usar y una estructura clara para definir rutas y endpoints. Además, ofrece una buena documentación con **Swagger**. 
+He escogido **FastAPI** para este proyecto debido a su eficiencia y simplicidad al crear APIs RESTful. Ofrece validación de datos con **Pydantic**, una sintaxis fácil de usar y una estructura clara para definir rutas y endpoints. Además, ofrece una buena documentación con **Swagger**.
 
 ## Estructura del Proyecto
 ```
@@ -52,6 +52,31 @@ Merlin_Software/
    fastapi dev main.py --port 8080
    ```
    La API estará disponible en `http://127.0.0.1:8080`.
+
+### `Scripts de Automatización (OPCIONAL)`
+
+En la carpeta `automation_scripts/` se encuentran varios scripts que ayudan a simplificar la configuración y ejecución del proyecto:
+
+- **`run.sh`**: Crea un entorno virtual, instala las dependencias y ejecuta la aplicación. Puedes ejecutarlo con:
+  ```sh
+  ./automation_scripts/run.sh
+  ```
+
+- **`test.sh`**: Ejecuta las pruebas del proyecto usando pytest. Puedes ejecutarlo con:
+  ```sh
+  ./automation_scripts/test.sh
+  ```
+
+- **`test_api.sh`**: Realiza varias solicitudes cURL al endpoint `/sort-products` para probar la funcionalidad de la API. Puedes ejecutarlo con:
+  ```sh
+  ./automation_scripts/test_api.sh
+  ```
+
+### Permisos de Ejecución
+Antes de ejecutar estos scripts, asegúrate de darles permisos de ejecución:
+```sh
+chmod +x automation_scripts/*.sh
+```
 
 ## Uso de la API
 
@@ -116,7 +141,6 @@ Para ejecutar las pruebas, asegúrate de que el entorno virtual esté activado y
 pytest -v tests/
 ```
 Esto ejecutará todas las pruebas definidas y proporcionará un resumen de los resultados.
-
 
 ## Consideraciones
 - **Configurabilidad**: Puedes modificar las ponderaciones (`salesWeight` y `stockWeight`) para ajustar la prioridad de ventas o stock según tus necesidades.
